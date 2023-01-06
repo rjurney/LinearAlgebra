@@ -7,18 +7,22 @@ class VectorArrow {
    float arrowWidth = 1;
    float arrowHeight = 1.5;
    
-   VectorArrow(float xVal, float yVal, int s) {
+   VectorArrow(CentralBasis startBasis, float xVal, float yVal, int s) {
       scale = s;
-      basis = new CentralBasis(scale, 1);
-      x = basis.x + (scale * xVal);
-      y = basis.y + (scale * yVal);
+      basis = startBasis;
       
-      leftX = x;
+      //rotate(radians(angle));
+
+      pointX = basis.x + (scale * xVal);
+      pointY = basis.y + (scale * yVal);
+      
    }
   
    void display() {
-     stroke(#000000);
+     stroke(#777777);
      strokeWeight(1);
+     
+     circle(pointX, pointY, 2500);
      //line(basis.x, basis.y, x, y);
      
      //translate(120, 80);

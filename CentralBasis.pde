@@ -1,10 +1,10 @@
 class CentralBasis {
-   
+
    int scale, size;
    float x, y;
    color b = #039dfc;
-   
-   CentralBasis(int s, int dotSize) {
+
+   CentralBasis(int dotSize, int s) {
       scale = s;
       x = (width  / 2) - ((width  / 2) % scale);
       y = (height / 2) - ((height / 2) % scale);

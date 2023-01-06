@@ -7,17 +7,18 @@ class BasisLine {
    
    BasisLine(CentralBasis startBasis, float xVal, float yVal, int s) {
       scale = s;
-      basis = new CentralBasis(scale, 1);
+      basis = startBasis;
       x = basis.x + (scale * xVal);
       y = basis.y + (scale * yVal);
-      arrow = new VectorArrow(x, y, s);
+      // arrow = new VectorArrow(startBasis, x, y, scale);
    }
    
    void display() {
       stroke(#000000);
       strokeWeight(1);
+      fill(#000000);
       line(basis.x, basis.y, x, y);
-      arrow.display();
-   }
-   
+      circle(x, y, 10);
+      // arrow.display();
+   }  
 }
